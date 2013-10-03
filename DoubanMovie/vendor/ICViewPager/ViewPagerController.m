@@ -70,10 +70,10 @@
         
         bezierPath = [UIBezierPath bezierPath];
         
-        // Draw the indicator
+        // Draw the indicator 标签页指示器
         [bezierPath moveToPoint:CGPointMake(0.0, rect.size.height - 1.0)];
         [bezierPath addLineToPoint:CGPointMake(rect.size.width, rect.size.height - 1.0)];
-        [bezierPath setLineWidth:5.0];
+        [bezierPath setLineWidth:2.0];
         [self.indicatorColor setStroke];
         [bezierPath stroke];
     }
@@ -148,7 +148,6 @@
 }
 
 - (IBAction)handleTapGesture:(id)sender {
-    
     self.animatingToTab = YES;
     
     // Get the desired page's index
@@ -253,7 +252,7 @@
         frame.origin.x -= self.tabOffset;
         frame.size.width = self.tabsView.frame.size.width;
     }
-    
+    //滚动到相应的view
     [_tabsView scrollRectToVisible:frame animated:YES];
 }
 
@@ -393,12 +392,11 @@
                                    animated:NO
                                  completion:nil];
     
-    // Set activeTabIndex
+    // 设置active页面，这里是设置第二个页面（好看点）
     self.activeTabIndex = self.startFromSecondTab;
 }
 
 - (TabView *)tabViewAtIndex:(NSUInteger)index {
-    
     if (index >= _tabCount) {
         return nil;
     }
@@ -494,15 +492,12 @@
     
     if (![self isAnimatingToTab]) {
         UIView *tabView = [self tabViewAtIndex:self.activeTabIndex];
-        
         // Get the related tab view position
         CGRect frame = tabView.frame;
         
         CGFloat movedRatio = (scrollView.contentOffset.x / scrollView.frame.size.width) - 1;
         frame.origin.x += movedRatio * frame.size.width;
-        
         if (self.centerCurrentTab) {
-            
             frame.origin.x += (frame.size.width / 2);
             frame.origin.x -= _tabsView.frame.size.width / 2;
             frame.size.width = _tabsView.frame.size.width;
@@ -515,9 +510,12 @@
                 frame.origin.x = (_tabsView.contentSize.width - _tabsView.frame.size.width);
             }
         } else {
-            
             frame.origin.x -= self.tabOffset;
             frame.size.width = self.tabsView.frame.size.width;
+        }
+        
+        if (_activeTabIndex==0 && frame.origin.x < -60.0) {
+            NSLog(@"打开左导航");
         }
         
         [_tabsView scrollRectToVisible:frame animated:NO];

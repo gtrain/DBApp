@@ -20,9 +20,8 @@
     
     self.dataSource = self;
     self.delegate = self;
-    
-    self.title = @"View Pager";
-    
+    self.title = kModTitle;
+    self.localDataObj=[MovieLocalData new];
     // Keeps tab bar below navigation bar on iOS 7.0+
 //    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
 //        self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -38,31 +37,27 @@
 
 #pragma mark - ViewPagerDataSource
 - (NSUInteger)numberOfTabsForViewPager:(ViewPagerController *)viewPager {
-    return 2;
+    return _localDataObj.movieListTypeArray.count;
 }
 - (UIView *)viewPager:(ViewPagerController *)viewPager viewForTabAtIndex:(NSUInteger)index {
     //标签标题
     UILabel *label = [UILabel new];
+    label.text = _localDataObj.movieListTypeArray[index];
     label.backgroundColor = [UIColor clearColor];
     label.font = [UIFont systemFontOfSize:13.0];
-    label.text = [NSString stringWithFormat:@"Content View- #%i", index];
     label.textAlignment = NSTextAlignmentCenter;
     label.textColor = [UIColor blackColor];
     [label sizeToFit];
-    
     return label;
 }
 
 //实例化子view
 - (UIViewController *)viewPager:(ViewPagerController *)viewPager contentViewControllerForTabAtIndex:(NSUInteger)index {
-    if (index==1) {
+    if (index==2) {
         MovieListViewController *centerController = [[MovieListViewController alloc] init];
         return centerController;
     }
-    
-    
-    ContentViewController *cvc=[ContentViewController new];
-    cvc.labelString = [NSString stringWithFormat:@"Content View #%i", index];
+    ContentViewController *cvc=[[ContentViewController alloc] initWithPageControl:self PageIndex:index];
     
     return cvc;
 }

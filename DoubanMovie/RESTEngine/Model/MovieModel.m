@@ -14,13 +14,27 @@
     self=[super init];
     if (self) {
         [self setValuesForKeysWithDictionary:dataDictionary];
-        [self setValuesForKeysWithDictionary:[dataDictionary objectForKey:@"images"]];
     }
     return self;
 }
 
-#pragma mark - NSCoding
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
+    //内嵌的dict重新赋值
+    if ([value isKindOfClass:[NSDictionary class]]) {
+        [self setValuesForKeysWithDictionary:value];
+    }
+    //其他特殊key的重新赋值
+    else if ([key isEqualToString:@"id"]) {
+        self.movieId=value;
+    }else if ([key isEqualToString:@"new"]) {
+        self.isNew=[(NSNumber *)value boolValue];
+    }
+    
+}
 
+#pragma mark - NSCoding
+//存储的时候转换data格式
 - (void)encodeWithCoder:(NSCoder *)aCoder{
     [aCoder encodeObject:_title forKey:@"title"];
     [aCoder encodeObject:_original_title forKey:@"original_title"];

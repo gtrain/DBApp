@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HostViewController.h"
 
 @interface ContentViewController : UIViewController
 
-@property NSString *labelString;
-@property (strong, nonatomic) UILabel *label;
+
+-(id) initWithPageControl:(HostViewController *)pageControl PageIndex:(NSInteger)index;
 
 @end

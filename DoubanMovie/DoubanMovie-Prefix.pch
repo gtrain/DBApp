@@ -11,17 +11,7 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
-
-    #define kScreenBoundsSize [UIScreen mainScreen].bounds.size
-
-//#ifdef DEBUG
-//#ifndef DLog
-//#   define DLog(fmt, ...) {NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);}
-//#endif
-//#ifndef ELog
-//#   define ELog(err) {if(err) DLog(@"%@", err)}
-//#endif
-//#endif
-
+    #import "Globle.h"
+    #import "AFNetEngine.h"
 
 #endif

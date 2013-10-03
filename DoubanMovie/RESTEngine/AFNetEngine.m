@@ -8,8 +8,9 @@
 
 #import "AFNetEngine.h"
 #import "AFJSONRequestOperation.h"
-#import "API.h"
-#import "AppDelegate.h"
+#import "MovieAPI.h"
+#import "MovieDataObj.h"
+
 
 @implementation AFNetEngine
 
@@ -36,17 +37,44 @@
 }
 
 #pragma mark - Custom Request Function
+//通用请求
+-(void) commonMovieListRequestWithUrlPath:(NSString *)path
+                                    param:(NSDictionary *)param
+                              onSucceeded:(ModelBlock) succeededBlock
+                                  onError:(ErrorBlock) errorBlock{
+    [self getPath:path parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        MovieDataObj *obj= [[MovieDataObj alloc] initWithDictionary:responseObject];
+        succeededBlock(obj);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        ELog(error);
+    }];
+}
+//剥离
+
+
+
+
+////请求正在热映
+//-(void) requestPlayingMovieWithCity:(NSString *)city
+//                              start:(NSNumber *)start
+//                              count:(NSString *)count
+//                        onSucceeded:(ModelArrayBlock) succeededBlock
+//                            onError:(ErrorBlock) errorBlock{
+//    NSDictionary *paramDict=@{@"city": city,
+//                             @"start": start,
+//                             @"count": count};
+////    [self commonMovieListRequestWithUrlPath:kPathNowplaying param:paramDict onSucceeded:succeededBlock onError:errorBlock];
+//}
 -(void) requestMovieListWithParam:(NSDictionary *)param
-                      OnSucceeded:(ModelArrayBlock) succeededBlock
+                      onSucceeded:(ModelArrayBlock) succeededBlock
                           onError:(ErrorBlock) errorBlock{
 
     [self getPath:kPathSciFi parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"--》%@",responseObject);
-        NSArray *subjectsArray=[responseObject objectForKey:@"subjects"];
+        NSArray *subjectsArray=[responseObject objectForKey:kKeyMovieSubjects];
         NSMutableArray *movieModelArray=[NSMutableArray arrayWithCapacity:subjectsArray.count];
         for (NSDictionary *movieDic in subjectsArray) {
-            MovieModel *_movie=[[MovieModel alloc] initWithDictionary:movieDic];
-            [movieModelArray addObject:_movie];
+            MovieModel *movie=[[MovieModel alloc] initWithDictionary:movieDic];
+            [movieModelArray addObject:movie];
         }
 //        self.cacheModleArray=movieModelArray;   //缓存
         succeededBlock(movieModelArray);
@@ -55,9 +83,12 @@
     }];
 }
 
+
+#pragma - set and get
+
 -(NSMutableArray *)cacheModleArray{
     if (!_cacheModleArray) {
-        NSMutableArray *cacheDataArray=[[NSUserDefaults standardUserDefaults] objectForKey:@"CacheDataArray"];
+        NSMutableArray *cacheDataArray=[[NSUserDefaults standardUserDefaults] objectForKey:@"SearchCacheArray"];
         if (cacheDataArray && cacheDataArray.count !=0) {
             _cacheModleArray=[NSMutableArray arrayWithCapacity:0];
             for (NSData *modelData in cacheDataArray) {
@@ -91,7 +122,7 @@
     }
     
     //参数为nil的时候可以清空缓存
-    [[NSUserDefaults standardUserDefaults] setObject:cahceDataArray forKey:@"CacheDataArray"];
+    [[NSUserDefaults standardUserDefaults] setObject:cahceDataArray forKey:@"SearchCacheArray"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

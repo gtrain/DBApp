@@ -7,7 +7,6 @@
 //
 
 #import "MovieListViewController.h"
-#import "AFNetEngine.h"
 #import "DBMovieCell.h"
 
 @implementation MovieListViewController{
@@ -95,7 +94,7 @@
 //    self.title=@"数据加载中..";
     
     //发起请求
-    [[AFNetEngine shareEngine] requestMovieListWithParam:paramDic OnSucceeded:^(NSArray *modelObjArray) {
+    [[AFNetEngine shareEngine] requestMovieListWithParam:paramDic onSucceeded:^(NSArray *modelObjArray) {
         //请求完成后，停止下拉刷新动画。标题栏显示电影类别
         if (self.refreshControl.isRefreshing) {
             [self.refreshControl endRefreshing];

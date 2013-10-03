@@ -77,7 +77,7 @@
       
         __block UIImageView *imgView=self.posterImgView;
         [self.posterImgView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:movie.small]]
-                              placeholderImage:[UIImage imageNamed:@"placeHolder"]
+                              placeholderImage:[UIImage imageNamed:@"resource.bundle/placeHolder"]
                                        success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
                                            imgView.image=image;
             //按比例调整大小

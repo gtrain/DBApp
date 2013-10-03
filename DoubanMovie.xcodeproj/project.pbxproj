@@ -19,8 +19,6 @@
 		7B6458FE17EA9501000E9CBB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B6458FD17EA9501000E9CBB /* Default-568h@2x.png */; };
 		7BB58DC517EA9A3B004933E4 /* MovieListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB58DC417EA9A3B004933E4 /* MovieListViewController.m */; };
 		7BB58DC717EAA421004933E4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB58DC617EAA421004933E4 /* QuartzCore.framework */; };
-		7BB58DCC17EAA763004933E4 /* placeHolder.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB58DCA17EAA763004933E4 /* placeHolder.png */; };
-		7BB58DCD17EAA763004933E4 /* placeHolder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB58DCB17EAA763004933E4 /* placeHolder@2x.png */; };
 		7BB58DEC17EAA763004933E4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB58DEB17EAA763004933E4 /* Security.framework */; };
 		7BB58DEE17EAA763004933E4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB58DED17EAA763004933E4 /* SystemConfiguration.framework */; };
 		7BB58DF017EAA763004933E4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BB58DEF17EAA763004933E4 /* MobileCoreServices.framework */; };
@@ -28,6 +26,9 @@
 		FE89567B17FBE0D500EE2725 /* ViewPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE89567A17FBE0D500EE2725 /* ViewPagerController.m */; };
 		FE89568017FBE10C00EE2725 /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE89567D17FBE10C00EE2725 /* HostViewController.m */; };
 		FE89568117FBE10C00EE2725 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE89567F17FBE10C00EE2725 /* ContentViewController.m */; };
+		FEC85AD717FC8A1900D2603E /* resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FEC85AD617FC8A1900D2603E /* resource.bundle */; };
+		FEC85ADF17FC8E4000D2603E /* MovieLocalData.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC85ADE17FC8E4000D2603E /* MovieLocalData.m */; };
+		FEC85AE417FD5FB500D2603E /* MovieDataObj.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC85AE317FD5FB500D2603E /* MovieDataObj.m */; };
 		FED9720617FBDE38000940D8 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FED9720417FBDE38000940D8 /* LeftViewController.m */; };
 		FED9720717FBDE38000940D8 /* LeftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FED9720517FBDE38000940D8 /* LeftViewController.xib */; };
 		FEF62A9417FBC685006AA024 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF62A8F17FBC685006AA024 /* IISideController.m */; };
@@ -66,8 +67,6 @@
 		7BB58DC317EA9A3B004933E4 /* MovieListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieListViewController.h; sourceTree = "<group>"; };
 		7BB58DC417EA9A3B004933E4 /* MovieListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieListViewController.m; sourceTree = "<group>"; };
 		7BB58DC617EAA421004933E4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		7BB58DCA17EAA763004933E4 /* placeHolder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeHolder.png; sourceTree = "<group>"; };
-		7BB58DCB17EAA763004933E4 /* placeHolder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeHolder@2x.png"; sourceTree = "<group>"; };
 		7BB58DEB17EAA763004933E4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		7BB58DED17EAA763004933E4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7BB58DEF17EAA763004933E4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -81,6 +80,12 @@
 		FE89567D17FBE10C00EE2725 /* HostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostViewController.m; sourceTree = "<group>"; };
 		FE89567E17FBE10C00EE2725 /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
 		FE89567F17FBE10C00EE2725 /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
+		FEC85AD617FC8A1900D2603E /* resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = resource.bundle; sourceTree = "<group>"; };
+		FEC85ADC17FC8CDE00D2603E /* Globle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globle.h; sourceTree = "<group>"; };
+		FEC85ADD17FC8E4000D2603E /* MovieLocalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieLocalData.h; sourceTree = "<group>"; };
+		FEC85ADE17FC8E4000D2603E /* MovieLocalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieLocalData.m; sourceTree = "<group>"; };
+		FEC85AE217FD5FB500D2603E /* MovieDataObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDataObj.h; sourceTree = "<group>"; };
+		FEC85AE317FD5FB500D2603E /* MovieDataObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDataObj.m; sourceTree = "<group>"; };
 		FED9720317FBDE38000940D8 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		FED9720417FBDE38000940D8 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		FED9720517FBDE38000940D8 /* LeftViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftViewController.xib; sourceTree = "<group>"; };
@@ -92,7 +97,7 @@
 		FEF62A9317FBC685006AA024 /* IIWrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIWrapController.m; sourceTree = "<group>"; };
 		FEF62A9817FBC8FD006AA024 /* AFNetEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetEngine.h; sourceTree = "<group>"; };
 		FEF62A9917FBC8FD006AA024 /* AFNetEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetEngine.m; sourceTree = "<group>"; };
-		FEF62A9A17FBC8FD006AA024 /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
+		FEF62A9A17FBC8FD006AA024 /* MovieAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieAPI.h; sourceTree = "<group>"; };
 		FEF62A9C17FBC8FD006AA024 /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
 		FEF62A9D17FBC8FD006AA024 /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
 		FEF62A9E17FBC8FD006AA024 /* MovieModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieModel.h; sourceTree = "<group>"; };
@@ -183,7 +188,7 @@
 		7B6458ED17EA9501000E9CBB /* DoubanMovie */ = {
 			isa = PBXGroup;
 			children = (
-				FED9720117FBDD53000940D8 /* ViewControl */,
+				FED9720117FBDD53000940D8 /* VCs */,
 				FEF62A9717FBC8FD006AA024 /* RESTEngine */,
 				7B6458F617EA9501000E9CBB /* AppDelegate.h */,
 				7B6458F717EA9501000E9CBB /* AppDelegate.m */,
@@ -195,9 +200,8 @@
 		7B6458EE17EA9501000E9CBB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FEC85AD617FC8A1900D2603E /* resource.bundle */,
 				FEF62A8C17FBC663006AA024 /* vendor */,
-				7BB58DCA17EAA763004933E4 /* placeHolder.png */,
-				7BB58DCB17EAA763004933E4 /* placeHolder@2x.png */,
 				7B6458EF17EA9501000E9CBB /* DoubanMovie-Info.plist */,
 				7B6458F017EA9501000E9CBB /* InfoPlist.strings */,
 				7B6458F317EA9501000E9CBB /* main.m */,
@@ -218,27 +222,45 @@
 			path = ICViewPager;
 			sourceTree = "<group>";
 		};
-		FED9720117FBDD53000940D8 /* ViewControl */ = {
+		FEC85AE017FC8E5E00D2603E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FED9720217FBDDFE000940D8 /* MovieMod */,
+				FEC85ADD17FC8E4000D2603E /* MovieLocalData.h */,
+				FEC85ADE17FC8E4000D2603E /* MovieLocalData.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FEC85AE117FC945D00D2603E /* API Path */ = {
+			isa = PBXGroup;
+			children = (
+				FEF62A9A17FBC8FD006AA024 /* MovieAPI.h */,
+			);
+			name = "API Path";
+			sourceTree = "<group>";
+		};
+		FED9720117FBDD53000940D8 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
 				FED9720317FBDE38000940D8 /* LeftViewController.h */,
 				FED9720417FBDE38000940D8 /* LeftViewController.m */,
 				FED9720517FBDE38000940D8 /* LeftViewController.xib */,
+				FED9720217FBDDFE000940D8 /* MovieMod */,
 			);
-			name = ViewControl;
+			name = VCs;
 			sourceTree = "<group>";
 		};
 		FED9720217FBDDFE000940D8 /* MovieMod */ = {
 			isa = PBXGroup;
 			children = (
-				7B614D1617EB117C00662F82 /* View */,
-				7BB58DC317EA9A3B004933E4 /* MovieListViewController.h */,
-				7BB58DC417EA9A3B004933E4 /* MovieListViewController.m */,
 				FE89567C17FBE10C00EE2725 /* HostViewController.h */,
 				FE89567D17FBE10C00EE2725 /* HostViewController.m */,
 				FE89567E17FBE10C00EE2725 /* ContentViewController.h */,
 				FE89567F17FBE10C00EE2725 /* ContentViewController.m */,
+				7BB58DC317EA9A3B004933E4 /* MovieListViewController.h */,
+				7BB58DC417EA9A3B004933E4 /* MovieListViewController.m */,
+				FEC85AE017FC8E5E00D2603E /* Model */,
+				7B614D1617EB117C00662F82 /* View */,
 			);
 			name = MovieMod;
 			sourceTree = "<group>";
@@ -269,9 +291,10 @@
 		FEF62A9717FBC8FD006AA024 /* RESTEngine */ = {
 			isa = PBXGroup;
 			children = (
+				FEC85AE117FC945D00D2603E /* API Path */,
+				FEC85ADC17FC8CDE00D2603E /* Globle.h */,
 				FEF62A9817FBC8FD006AA024 /* AFNetEngine.h */,
 				FEF62A9917FBC8FD006AA024 /* AFNetEngine.m */,
-				FEF62A9A17FBC8FD006AA024 /* API.h */,
 				FEF62A9B17FBC8FD006AA024 /* Model */,
 			);
 			path = RESTEngine;
@@ -284,6 +307,8 @@
 				FEF62A9D17FBC8FD006AA024 /* JSONModel.m */,
 				FEF62A9E17FBC8FD006AA024 /* MovieModel.h */,
 				FEF62A9F17FBC8FD006AA024 /* MovieModel.m */,
+				FEC85AE217FD5FB500D2603E /* MovieDataObj.h */,
+				FEC85AE317FD5FB500D2603E /* MovieDataObj.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -369,9 +394,8 @@
 				7B6458FA17EA9501000E9CBB /* Default.png in Resources */,
 				7B6458FC17EA9501000E9CBB /* Default@2x.png in Resources */,
 				7B6458FE17EA9501000E9CBB /* Default-568h@2x.png in Resources */,
-				7BB58DCC17EAA763004933E4 /* placeHolder.png in Resources */,
-				7BB58DCD17EAA763004933E4 /* placeHolder@2x.png in Resources */,
 				FED9720717FBDE38000940D8 /* LeftViewController.xib in Resources */,
+				FEC85AD717FC8A1900D2603E /* resource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +430,8 @@
 				FEF62ABE17FBC90B006AA024 /* AFXMLRequestOperation.m in Sources */,
 				FEF62ABF17FBC90B006AA024 /* UIImageView+AFNetworking.m in Sources */,
 				FED9720617FBDE38000940D8 /* LeftViewController.m in Sources */,
+				FEC85ADF17FC8E4000D2603E /* MovieLocalData.m in Sources */,
+				FEC85AE417FD5FB500D2603E /* MovieDataObj.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
